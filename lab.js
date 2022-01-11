@@ -47,23 +47,33 @@ console.log(dog['color'])
   Have the values to those keys be strings that are equal to your favorite thing in that category.
 */
 
-//Code here
+const favoriteThings = {
+  band: 'Escape the Fate',
+  food: 'tacos',
+  person: 'Braxton and Jacob', 
+  book: 'The Name of the Wind', 
+  movie: 'The Lion King', 
+  holiday: 'Halloween'
+}
 
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
-//Code here
+favoriteThings.car = `'67 Chevy Impala`; 
+favoriteThings.show = 'Sherlock';
 
-
+console.log(favoriteThings)
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
 */
 
-//Code here
+favoriteThings.food = 'Chicken Nuggets';
+favoriteThings.book = 'Harry Potter'
 
+console.log(favoriteThings)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -80,7 +90,8 @@ var carDetails = {
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
 
-//Code Here
+// const {color, make, model, year} = car
+
 
 
 
@@ -93,13 +104,19 @@ var carDetails = {
 */
 
 function greeting( obj ) {
-  //Code Here
+ const {title, firstName, lastName} = obj
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
 
+let samplePerson = {
+  firstName: 'Sherlock',
+  lastName: 'Holmes',
+  title: 'Detective',
+}
+console.log(greeting(samplePerson))
 
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
@@ -111,9 +128,18 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables.
   Sum up the values and return the total number.
 */
+let states = {
+  utah: 2000, 
+  california: 5000,
+  texas: 4000, 
+  arizona: 3000,
+}
 
-//Code Here
-
+function totalPopulation(obj) {
+ const {utah, california, texas, arizona} = obj
+ return utah + california + texas + arizona;
+}
+console.log(totalPopulation(states))
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -126,7 +152,18 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+// function ingredients (obj) {
+//   arr = []
+//   const {carb, fat, protein} = obj
+//  arr.push(obj)
+// }
+
+// let cookie = {
+//   carb: 16, 
+//   fat: 30,
+//   protein: 7,
+// }
+// console.log(ingredients(cookie))
 
 
 
@@ -148,7 +185,8 @@ var user = {
   Make that change without modifying the original object code above.
 */
 
-//Code Here
+user.name = 'Bryan G. Smith'
+user.email = 'bryan.smith@devmounta.in'
 
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
@@ -156,7 +194,7 @@ var user = {
   Using the user object above, delete the users age off of the object.
 */
 
-//Code Here
+delete user.age
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -166,9 +204,16 @@ var user = {
   Print the name of your cat instance using dot notation.
 */
 
-//Code here
+class Cat {
+  constructor (name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
-
+let cat1 = new Cat('Chocobo')
+console.log(cat1.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -178,8 +223,19 @@ var user = {
   Call the castSpell function on the instance of your wizard.
 */
 
-//Code here
-
+class Wizard {
+  constructor (name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell
+  }
+castSpell() {
+  console.log(this.name, `has cast`, this.favoriteSpell, `!` )
+}
+}
+let wizard1 = new Wizard('Hermione', 14, 'Lumos')
+console.log(wizard1)
+wizard1.castSpell()
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
