@@ -230,12 +230,13 @@ class Wizard {
     this.favoriteSpell = favoriteSpell
   }
 castSpell() {
-  console.log(this.name, `has cast`, this.favoriteSpell, `!` )
+  console.log(this.name, `has cast`, this.favoriteSpell,`!` )
 }
 }
 let wizard1 = new Wizard('Hermione', 14, 'Lumos')
 console.log(wizard1)
 wizard1.castSpell()
+
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -259,7 +260,25 @@ wizard1.castSpell()
     to be newPrice.
 */
 
-//Code Here
+class Phone {
+  constructor (brand, model, storage, color, price,) {
+    this.brand = brand; 
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false;
+  }
+
+  sell() {
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+}
 
   
 /*
@@ -272,8 +291,9 @@ wizard1.castSpell()
     - price: number
 */
 
-//Code Here
-
+let phone1 = new Phone('Samsung', 'Galaxy', 333, 'silver', 799)
+let phone2 = new Phone('Google', 'Pixel', 444, 'black', 899)
+let phone3 = new Phone('Apple', 'iPhone23', 555, 'white', 999 )
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
